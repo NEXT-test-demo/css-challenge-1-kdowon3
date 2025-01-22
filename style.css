@@ -1,0 +1,88 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: 'Roboto';
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .container {
+    justify-self: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+    gap: 0px; /* 상하 및 좌우 간격 없앰 */
+    column-gap: -20px; /* 좌우 컬럼 간격을 음수로 설정하여 더 붙임 */
+    width: 1000px;
+  }
+  
+  
+  .palette {
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 수직 가운데 정렬 */
+    justify-content: center; /* 수평 가운데 정렬 */
+    flex-direction: column; /* 글자와 색상 그룹을 세로로 배치 */
+    margin: 5px; /* 개별 팔레트의 외부 여백 최소화 */
+  }
+  
+  
+  .palette h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .colors {
+    position: relative;
+    width: 200px; /* 컨테이너의 폭을 지정 */
+    height: 60px; /* 컨테이너의 높이를 지정 */
+    margin-left: 0px;
+    gap: 80px;
+  }
+  
+  .color {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .color:nth-child(1) {
+    top: 0;
+    left: 0;
+    z-index: 4;
+  }
+  
+  .color:nth-child(2) {
+    top: 0;
+    left: 50px;
+    z-index: 3;
+  }
+  
+  .color:nth-child(3) {
+    top: 0;
+    left: 90px;
+    z-index: 2;
+  }
+  
+  .color:nth-child(4) {
+    top: 0;
+    left: 130px;
+    z-index: 1;
+  }
+  
+  .color span {
+    position: absolute;
+    top: 110%; /* 원 바로 아래에 위치 */
+    left: 50%; /* 중앙 정렬 */
+    transform: translateX(-50%);
+    font-size: 8px; /* 텍스트 크기 */
+    font-family: 'Roboto';
+    color: #333; /* 텍스트 색상 */
+    text-align: center;
+  }
+  
+  @media (max-width: 720px) {
+    .container {
+      grid-template-columns: 1fr;
+    }
+  }
